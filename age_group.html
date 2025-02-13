@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Group Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Enter Your Age</h2>
+    <input type="number" id="ageInput" placeholder="Enter your age">
+    <button onclick="checkAgeGroup()">Check Age Group</button>
+    <p id="result"></p>
+
+    <script>
+        function checkAgeGroup() {
+            let age = document.getElementById("ageInput").value;
+            let result = document.getElementById("result");
+            let ageGroup = "";
+
+            if (age === "" || isNaN(age) || age < 0) {
+                ageGroup = "Please enter a valid age!";
+            } else if (age <= 12) {
+                ageGroup = "Child";
+            } else if (age <= 19) {
+                ageGroup = "Teenager";
+            } else if (age <= 35) {
+                ageGroup = "Young Adult";
+            } else if (age <= 59) {
+                ageGroup = "Adult";
+            } else {
+                ageGroup = "Senior Citizen";
+            }
+
+            result.textContent = "You belong to: " + ageGroup;
+        }
+    </script>
+
+</body>
+</html>

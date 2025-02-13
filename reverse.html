@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse an Array</title>
+</head>
+<body>
+    <h1>Reverse an Array</h1>
+    <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+    <button onclick="reverseArray()">Reverse</button>
+    <p id="result"></p>
+
+    <script>
+        function reverseArray() {
+            let input = document.getElementById("arrayInput").value;
+            let numArray = input.split(",").map(Number);
+            let reversed = numArray.reverse();
+            document.getElementById("result").textContent = "Reversed Array: " + reversed.join(", ");
+        }
+    </script>
+</body>
+</html>
